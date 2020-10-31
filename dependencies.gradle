@@ -1,0 +1,24 @@
+ext {
+    jUnitTestVersion = '4.13.1'
+    jUnitAndroidTestVersion = '1.1.2'
+    espressoVersion = '3.3.0'
+    coreKtxVersion = '1.3.2'
+    appCompatVersion = '1.2.0'
+    materialVersion = '1.2.1'
+
+    core = [
+            kotlinStdLib: "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            coreKtx     : "androidx.core:core-ktx:${coreKtxVersion}",
+            appCompat   : "androidx.appcompat:appcompat:${appCompatVersion}",
+            material    : "com.google.android.material:material:${materialVersion}"
+    ]
+
+    test = [
+            jUnit: "junit:junit:${jUnitTestVersion}"
+    ]
+
+    androidTest = [
+            jUnit   : "androidx.test.ext:junit:${jUnitAndroidTestVersion}",
+            espresso: "androidx.test.espresso:espresso-core:${espressoVersion}"
+    ]
+}
