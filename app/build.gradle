@@ -8,6 +8,8 @@ android {
     buildToolsVersion buildToolsVersion
 
     defaultConfig {
+        manifestPlaceholders = [minSdkVersion:"${minSdkVersion}", maxSdkVersion:"${maxSdkVersion}"]
+
         applicationId "com.learning.android_scrollview"
         minSdkVersion minSdkVersion
         targetSdkVersion maxSdkVersion
