@@ -4,15 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion maxSdkVersion.toInteger()
+    compileSdkVersion maxApiVersion.toInteger()
     buildToolsVersion buildToolsVersion
 
     defaultConfig {
-        manifestPlaceholders = [minSdkVersion:"${minSdkVersion}", maxSdkVersion:"${maxSdkVersion}"]
-
         applicationId "com.learning.android_scrollview"
-        minSdkVersion minSdkVersion
-        targetSdkVersion maxSdkVersion
+        minSdkVersion minApiVersion
+        targetSdkVersion maxApiVersion
         versionCode "$versionCodeValue".toInteger()
         versionName "$versionNameValue"
 

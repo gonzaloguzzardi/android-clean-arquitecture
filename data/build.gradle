@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion maxSdkVersion.toInteger()
+    compileSdkVersion maxApiVersion.toInteger()
     buildToolsVersion buildToolsVersion
 
     defaultConfig {
-        minSdkVersion minSdkVersion
-        targetSdkVersion maxSdkVersion
+        minSdkVersion minApiVersion
+        targetSdkVersion maxApiVersion
     }
 
     buildTypes {

@@ -2,7 +2,7 @@ ext {
     jUnitTestVersion = '4.13.1'
     jUnitAndroidTestVersion = '1.1.2'
     espressoVersion = '3.3.0'
-    coreKtxVersion = '1.4.+'
+    coreKtxVersion = '1.3.2'
     appCompatVersion = '1.2.0'
     materialVersion = '1.2.1'
 
