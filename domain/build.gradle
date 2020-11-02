@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
 }
 
@@ -8,23 +8,16 @@ android {
     buildToolsVersion buildToolsVersion
 
     defaultConfig {
-        applicationId "com.learning.android_scrollview"
         minSdkVersion minSdkVersion
         targetSdkVersion maxSdkVersion
-        versionCode "$versionCodeValue".toInteger()
-        versionName "$versionNameValue"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
-            shrinkResources false
             minifyEnabled false
             debuggable true
         }
         release {
-            shrinkResources true
             minifyEnabled true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -41,14 +34,7 @@ android {
 }
 
 dependencies {
-    implementation project(':data')
-    implementation project(':domain')
-
     implementation core.kotlinStdLib
     implementation core.coreKtx
-    implementation core.appCompat
-    implementation core.material
     testImplementation test.jUnit
-    androidTestImplementation androidTest.jUnit
-    androidTestImplementation androidTest.espresso
 }
