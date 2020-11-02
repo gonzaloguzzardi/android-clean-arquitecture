@@ -5,13 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.learning.androidscrollview.R
+import androidx.viewbinding.ViewBinding
+import com.learning.androidscrollview.databinding.FragmentPostsListBinding
 
 class PostsListFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_posts_list, container, false)
+    private lateinit var binding: ViewBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentPostsListBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }

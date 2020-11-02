@@ -6,13 +6,15 @@ ext {
     appCompatVersion = '1.2.0'
     materialVersion = '1.2.1'
     swipeToRefreshVersion = '1.1.0'
+    constraintLayoutVersion = '2.0.4'
 
     core = [
-            kotlinStdLib  : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
-            coreKtx       : "androidx.core:core-ktx:${coreKtxVersion}",
-            appCompat     : "androidx.appcompat:appcompat:${appCompatVersion}",
-            material      : "com.google.android.material:material:${materialVersion}",
-            swipeToRefresh: "androidx.swiperefreshlayout:swiperefreshlayout:${swipeToRefreshVersion}"
+            kotlinStdLib    : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            coreKtx         : "androidx.core:core-ktx:${coreKtxVersion}",
+            appCompat       : "androidx.appcompat:appcompat:${appCompatVersion}",
+            material        : "com.google.android.material:material:${materialVersion}",
+            swipeToRefresh  : "androidx.swiperefreshlayout:swiperefreshlayout:${swipeToRefreshVersion}",
+            constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
     ]
 
     jetpack = [
