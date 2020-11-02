@@ -1,4 +1,4 @@
-package com.learning.androidscrollview.views.postslist
+package com.learning.app.views.postslist
 
 import android.content.Context
 import android.util.AttributeSet

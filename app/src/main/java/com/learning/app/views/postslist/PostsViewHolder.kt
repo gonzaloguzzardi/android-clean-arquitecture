@@ -1,4 +1,4 @@
-package com.learning.androidscrollview.views.postslist
+package com.learning.app.views.postslist
 
 import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.learning.androidscrollview.databinding.ViewHolderPostItemBinding
-import com.learning.androidscrollview.extensions.setTextOrHide
+import com.learning.app.databinding.ViewHolderPostItemBinding
+import com.learning.app.extensions.setTextOrHide
 import com.learning.data.model.PostItem
 
 class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHolder(binding.root) {

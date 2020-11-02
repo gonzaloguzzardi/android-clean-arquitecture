@@ -1,4 +1,4 @@
-package com.learning.androidscrollview.extensions
+package com.learning.app.extensions
 
 import android.view.View.GONE
 import android.view.View.VISIBLE

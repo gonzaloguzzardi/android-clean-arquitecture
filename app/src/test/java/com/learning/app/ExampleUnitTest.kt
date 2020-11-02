@@ -1,4 +1,4 @@
-package com.learning.androidscrollview
+package com.learning.app
 
 import org.junit.Test
 
