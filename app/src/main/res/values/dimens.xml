@@ -1,5 +1,5 @@
 <resources>
-    <dimen name="app_bar_height">180dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
+    <dimen name="view_holder_post_vertical_margins">12dp</dimen>
+    <dimen name="view_holder_post_horizontal_margins">12dp</dimen>
+    <dimen name="view_holder_post_subtitle_margin_top">4dp</dimen>
 </resources>

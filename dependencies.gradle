@@ -7,6 +7,7 @@ ext {
     materialVersion = '1.2.1'
     swipeToRefreshVersion = '1.1.0'
     constraintLayoutVersion = '2.0.4'
+    retrofitVersion = '2.9.0'
 
     core = [
             kotlinStdLib    : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
@@ -20,6 +21,11 @@ ext {
     jetpack = [
             navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
             navigationUi      : "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    ]
+
+    thirdParty = [
+            retrofit: "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            moshiConverter: "com.squareup.retrofit2:converter-moshi:${retrofitVersion}"
     ]
 
     test = [
