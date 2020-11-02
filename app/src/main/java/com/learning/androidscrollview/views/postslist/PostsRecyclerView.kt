@@ -21,5 +21,4 @@ class PostsRecyclerView(context: Context, attrs: AttributeSet? = null) :
             )
         )
     }
-
 }
