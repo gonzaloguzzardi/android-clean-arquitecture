@@ -5,12 +5,27 @@ ext {
     coreKtxVersion = '1.3.2'
     appCompatVersion = '1.2.0'
     materialVersion = '1.2.1'
+    swipeToRefreshVersion = '1.1.0'
+    constraintLayoutVersion = '2.0.4'
+    retrofitVersion = '2.9.0'
 
     core = [
-            kotlinStdLib: "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
-            coreKtx     : "androidx.core:core-ktx:${coreKtxVersion}",
-            appCompat   : "androidx.appcompat:appcompat:${appCompatVersion}",
-            material    : "com.google.android.material:material:${materialVersion}"
+            kotlinStdLib    : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            coreKtx         : "androidx.core:core-ktx:${coreKtxVersion}",
+            appCompat       : "androidx.appcompat:appcompat:${appCompatVersion}",
+            material        : "com.google.android.material:material:${materialVersion}",
+            swipeToRefresh  : "androidx.swiperefreshlayout:swiperefreshlayout:${swipeToRefreshVersion}",
+            constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
+    ]
+
+    jetpack = [
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUi      : "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    ]
+
+    thirdParty = [
+            retrofit: "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            moshiConverter: "com.squareup.retrofit2:converter-moshi:${retrofitVersion}"
     ]
 
     test = [
@@ -18,7 +33,8 @@ ext {
     ]
 
     androidTest = [
-            jUnit   : "androidx.test.ext:junit:${jUnitAndroidTestVersion}",
-            espresso: "androidx.test.espresso:espresso-core:${espressoVersion}"
+            jUnit     : "androidx.test.ext:junit:${jUnitAndroidTestVersion}",
+            espresso  : "androidx.test.espresso:espresso-core:${espressoVersion}",
+            navigation: "androidx.navigation:navigation-testing:$navigationVersion"
     ]
 }

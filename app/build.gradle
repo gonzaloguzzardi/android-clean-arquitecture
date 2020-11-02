@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 android {
     compileSdkVersion maxApiVersion.toInteger()
     buildToolsVersion buildToolsVersion
@@ -15,6 +17,10 @@ android {
         versionName "$versionNameValue"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -48,7 +54,14 @@ dependencies {
     implementation core.coreKtx
     implementation core.appCompat
     implementation core.material
+    implementation core.swipeToRefresh
+    implementation core.constraintLayout
+
+    implementation jetpack.navigationFragment
+    implementation jetpack.navigationUi
+
     testImplementation test.jUnit
     androidTestImplementation androidTest.jUnit
     androidTestImplementation androidTest.espresso
+    androidTestImplementation androidTest.navigation
 }
