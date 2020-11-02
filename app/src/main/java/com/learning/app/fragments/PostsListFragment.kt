@@ -1,11 +1,11 @@
-package com.learning.androidscrollview.fragments
+package com.learning.app.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.learning.androidscrollview.databinding.FragmentPostsListBinding
+import com.learning.app.databinding.FragmentPostsListBinding
 
 class PostsListFragment : Fragment() {
 

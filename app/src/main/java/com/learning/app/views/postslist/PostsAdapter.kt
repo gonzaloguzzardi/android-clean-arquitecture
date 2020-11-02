@@ -1,4 +1,4 @@
-package com.learning.androidscrollview.views.postslist
+package com.learning.app.views.postslist
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

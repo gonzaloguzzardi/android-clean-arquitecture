@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:showAsAction="never">
 
-    <com.learning.androidscrollview.views.postslist.PostsRecyclerView
+    <com.learning.app.views.postslist.PostsRecyclerView
         android:id="@+id/recycler_view_posts"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

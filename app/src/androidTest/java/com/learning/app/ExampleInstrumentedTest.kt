@@ -1,4 +1,4 @@
-package com.learning.androidscrollview
+package com.learning.app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
