@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidscrollview">
         <activity
-            android:name="com.learning.androidscrollview.ScrollingActivity"
+            android:name="com.learning.androidscrollview.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Androidscrollview.NoActionBar">
             <intent-filter>
