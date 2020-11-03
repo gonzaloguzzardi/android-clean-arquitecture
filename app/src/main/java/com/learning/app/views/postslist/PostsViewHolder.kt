@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.learning.app.databinding.ViewHolderPostItemBinding
 import com.learning.app.extensions.setTextOrHide
-import com.learning.data.model.PostItemData
+import com.learning.data.model.PostItemDataModel
 
 class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHolder(binding.root) {
 
@@ -26,16 +26,16 @@ class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHold
         }
     }
 
-    fun bind(postItemData: PostItemData) {
-        binding.postTitle.setTextOrHide(postItemData.title)
-        bindSubtitle(postItemData)
+    fun bind(postItemModel: PostItemDataModel) {
+        binding.postTitle.setTextOrHide(postItemModel.title)
+        bindSubtitle(postItemModel)
     }
 
-    private fun bindSubtitle(postItemData: PostItemData) {
-        if (postItemData.author.isNullOrBlank() && postItemData.creationTime.isNullOrBlank()) {
+    private fun bindSubtitle(postItemModel: PostItemDataModel) {
+        if (postItemModel.author.isNullOrBlank() && postItemModel.creationTime.isNullOrBlank()) {
             binding.postSubtitle.visibility = GONE
         } else {
-            val subtitle = createSubtitle(postItemData.author, postItemData.creationTime)
+            val subtitle = createSubtitle(postItemModel.author, postItemModel.creationTime)
             binding.postSubtitle.text = subtitle
             binding.postSubtitle.visibility = VISIBLE
         }

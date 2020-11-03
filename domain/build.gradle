@@ -37,8 +37,5 @@ dependencies {
     implementation core.kotlinStdLib
     implementation core.coreKtx
 
-    implementation thirdParty.retrofit
-    implementation thirdParty.moshiConverter
-
     testImplementation test.jUnit
 }

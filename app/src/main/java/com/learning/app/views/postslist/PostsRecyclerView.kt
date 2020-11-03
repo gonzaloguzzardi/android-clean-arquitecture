@@ -4,12 +4,13 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.learning.data.model.PostItemData
+import com.learning.data.model.PostItemDataModel
 
 class PostsRecyclerView(context: Context, attrs: AttributeSet? = null) :
     RecyclerView(context, attrs) {
 
     init {
+        setHasFixedSize(true)
         overScrollMode = OVER_SCROLL_NEVER
         layoutManager = LinearLayoutManager(context)
     }
@@ -17,8 +18,8 @@ class PostsRecyclerView(context: Context, attrs: AttributeSet? = null) :
     fun setData() {
         adapter = PostsAdapter(
             listOf(
-                PostItemData("Title", "author", "25m"),
-                PostItemData("Title", "author", "15m")
+                PostItemDataModel("0", "Title", null, "author", "25m"),
+                PostItemDataModel("1", "Title", null, "author", "15m")
             )
         )
     }

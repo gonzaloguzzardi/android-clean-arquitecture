@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion maxApiVersion.toInteger()
     buildToolsVersion buildToolsVersion
@@ -14,10 +16,14 @@ android {
 
     buildTypes {
         debug {
+            buildConfigField 'Int', 'NETWORK_LOG_LEVEL', '3'
+
             minifyEnabled false
             debuggable true
         }
         release {
+            buildConfigField 'Int', 'NETWORK_LOG_LEVEL', '0'
+
             minifyEnabled true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -37,5 +43,15 @@ dependencies {
     implementation project(':domain')
     implementation core.kotlinStdLib
     implementation core.coreKtx
+    implementation thirdParty.retrofit
+    implementation thirdParty.moshiConverter
+    implementation thirdParty.coroutineCallAdapter
+    implementation thirdParty.okHttp3
+    implementation thirdParty.okHttp3Logging
+    implementation jetpack.roomRuntime
+    implementation jetpack.roomKtx
+    kapt jetpack.roomCompiler
+
     testImplementation test.jUnit
+    testImplementation test.roomTesting
 }
