@@ -9,7 +9,11 @@ class PostsRepositoryImpl(private val postsRetrofitService: PostsRetrofitService
     PostsRepository {
 
     override suspend fun getPosts(): List<PostItemDomainModel> =
-        postsRetrofitService.getPosts().posts.map {
-            it.toDomainModel()
+        try {
+            postsRetrofitService.getPosts().posts.map {
+                it.toDomainModel()
+            }
+        } catch (e: Exception) {
+            emptyList()
         }
 }

@@ -16,14 +16,10 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField 'Int', 'NETWORK_LOG_LEVEL', '3'
-
             minifyEnabled false
             debuggable true
         }
         release {
-            buildConfigField 'Int', 'NETWORK_LOG_LEVEL', '0'
-
             minifyEnabled true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

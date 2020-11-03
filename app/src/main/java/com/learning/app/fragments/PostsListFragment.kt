@@ -10,11 +10,12 @@ import androidx.lifecycle.Observer
 import com.learning.app.databinding.FragmentPostsListBinding
 import com.learning.app.livedata.PostsLiveData
 import com.learning.app.viewmodels.PostsListViewModel
+import com.learning.app.viewmodels.PostsListViewModelFactory
 import com.learning.domain.model.PostItemDomainModel
 
 class PostsListFragment : Fragment() {
 
-    private val postsViewModel: PostsListViewModel by viewModels()
+    private val postsViewModel: PostsListViewModel by viewModels { PostsListViewModelFactory() }
 
     private lateinit var binding: FragmentPostsListBinding
 
@@ -35,23 +36,32 @@ class PostsListFragment : Fragment() {
     ): View {
         binding = FragmentPostsListBinding.inflate(inflater, container, false)
 
-        binding.swipeRefreshLayout.setOnRefreshListener {
-            // TODO refresh
-        }
         postsViewModel.postsViewStateLiveData.observe(viewLifecycleOwner, stateObserver)
         postsViewModel.loadPosts()
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            postsViewModel.loadPosts()
+        }
+
         return binding.root
     }
 
     private fun showError() {
-
+        binding.swipeRefreshLayout.isRefreshing = false
     }
 
     private fun showSuccess(posts: List<PostItemDomainModel>) {
+        binding.swipeRefreshLayout.isRefreshing = false
         binding.recyclerViewPosts.setData(posts)
     }
 
     private fun showLoading() {
-
+        binding.swipeRefreshLayout.let { swipeRefreshLayout ->
+            if (!swipeRefreshLayout.isRefreshing) {
+                swipeRefreshLayout.post {
+                    swipeRefreshLayout.isRefreshing = true
+                }
+            }
+        }
     }
 }
