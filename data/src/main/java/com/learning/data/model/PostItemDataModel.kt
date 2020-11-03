@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
 data class PostItemDataModel(
     @field:Json(name = "objectID") val id: String?,
     val title: String?,
-    val storyTitle: String?,
+    @field:Json(name = "story_title") val storyTitle: String?,
     val author: String?,
     @field:Json(name = "created_at") val creationTime: String?
 )
