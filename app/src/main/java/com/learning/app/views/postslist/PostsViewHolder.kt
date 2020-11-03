@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.learning.app.databinding.ViewHolderPostItemBinding
 import com.learning.app.extensions.setTextOrHide
-import com.learning.data.model.PostItem
+import com.learning.app.utils.getTimeSinceCreationString
+import com.learning.domain.model.PostItemDomainModel
 
 class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHolder(binding.root) {
 
@@ -26,35 +27,36 @@ class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHold
         }
     }
 
-    fun bind(postItem: PostItem) {
-        binding.postTitle.setTextOrHide(postItem.title)
-        bindSubtitle(postItem)
+    fun bind(postItemModel: PostItemDomainModel) {
+        binding.postTitle.setTextOrHide(postItemModel.title)
+        bindSubtitle(postItemModel)
     }
 
-    private fun bindSubtitle(postItem: PostItem) {
-        if (postItem.author.isNullOrBlank() && postItem.creationTime.isNullOrBlank()) {
+    private fun bindSubtitle(postItemModel: PostItemDomainModel) {
+        if (postItemModel.author.isNullOrBlank() && postItemModel.creationTime.isNullOrBlank()) {
             binding.postSubtitle.visibility = GONE
         } else {
-            val subtitle = createSubtitle(postItem.author, postItem.creationTime)
+            val subtitle = createSubtitle(
+                postItemModel.author,
+                getTimeSinceCreation(postItemModel.creationTime)
+            )
             binding.postSubtitle.text = subtitle
             binding.postSubtitle.visibility = VISIBLE
         }
     }
 
-    private fun createSubtitle(author: String?, creationTime: String?): SpannableStringBuilder {
+    private fun createSubtitle(author: String?, timeSinceCreation: String?): SpannableStringBuilder {
         val spannableStringBuilder = SpannableStringBuilder()
         if (!author.isNullOrBlank()) {
             spannableStringBuilder.append(author)
         }
-        if (!creationTime.isNullOrBlank()) {
+        if (!timeSinceCreation.isNullOrBlank()) {
             spannableStringBuilder.append(SUBTITLE_STRINGS_SEPARATOR)
-            spannableStringBuilder.append(getTimeSinceCreation(creationTime))
+            spannableStringBuilder.append(timeSinceCreation)
         }
         return spannableStringBuilder
     }
 
-    private fun getTimeSinceCreation(creationTime: String): String {
-        // TODO implement
-        return creationTime
-    }
+    private fun getTimeSinceCreation(creationTime: String?) =
+        getTimeSinceCreationString(binding.root.context, creationTime)
 }

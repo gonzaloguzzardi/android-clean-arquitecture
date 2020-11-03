@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion maxApiVersion.toInteger()
     buildToolsVersion buildToolsVersion
@@ -37,5 +39,15 @@ dependencies {
     implementation project(':domain')
     implementation core.kotlinStdLib
     implementation core.coreKtx
+    implementation thirdParty.retrofit
+    implementation thirdParty.moshiConverter
+    implementation thirdParty.coroutineCallAdapter
+    implementation thirdParty.okHttp3
+    implementation thirdParty.okHttp3Logging
+    implementation jetpack.roomRuntime
+    implementation jetpack.roomKtx
+    kapt jetpack.roomCompiler
+
     testImplementation test.jUnit
+    testImplementation test.roomTesting
 }

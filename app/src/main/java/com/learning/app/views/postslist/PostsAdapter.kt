@@ -3,9 +3,9 @@ package com.learning.app.views.postslist
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.learning.data.model.PostItem
+import com.learning.domain.model.PostItemDomainModel
 
-class PostsAdapter(private val posts: List<PostItem>): RecyclerView.Adapter<ViewHolder>() {
+class PostsAdapter(private val posts: List<PostItemDomainModel>): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PostsViewHolder.create(parent)
 

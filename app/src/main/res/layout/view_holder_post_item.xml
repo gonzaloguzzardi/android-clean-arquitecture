@@ -3,17 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/view_holder_post_horizontal_margins"
-    android:layout_marginTop="@dimen/view_holder_post_vertical_margins"
-    android:layout_marginEnd="@dimen/view_holder_post_horizontal_margins"
-    android:layout_marginBottom="@dimen/view_holder_post_vertical_margins"
-    android:orientation="vertical">
+    android:background="?android:selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/view_holder_post_horizontal_margins"
+    android:paddingTop="@dimen/view_holder_post_vertical_margins"
+    android:paddingEnd="@dimen/view_holder_post_horizontal_margins"
+    android:paddingBottom="@dimen/view_holder_post_vertical_margins">
 
     <TextView
         android:id="@+id/post_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black"
         tools:text="How to automatically create images for responsive design" />
 
     <TextView
