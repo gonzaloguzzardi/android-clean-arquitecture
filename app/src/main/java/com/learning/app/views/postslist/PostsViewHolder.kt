@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.learning.app.databinding.ViewHolderPostItemBinding
 import com.learning.app.extensions.setTextOrHide
-import com.learning.app.utils.TimeUtils
+import com.learning.app.utils.getTimeSinceCreationString
 import com.learning.domain.model.PostItemDomainModel
 
 class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHolder(binding.root) {
@@ -58,5 +58,5 @@ class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHold
     }
 
     private fun getTimeSinceCreation(creationTime: String?) =
-        TimeUtils.getTimeSinceCreationString(binding.root.context, creationTime)
+        getTimeSinceCreationString(binding.root.context, creationTime)
 }
