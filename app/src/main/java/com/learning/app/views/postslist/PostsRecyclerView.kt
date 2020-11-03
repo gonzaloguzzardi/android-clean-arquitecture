@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.learning.data.model.PostItemDataModel
+import com.learning.domain.model.PostItemDomainModel
 
 class PostsRecyclerView(context: Context, attrs: AttributeSet? = null) :
     RecyclerView(context, attrs) {
@@ -15,12 +15,7 @@ class PostsRecyclerView(context: Context, attrs: AttributeSet? = null) :
         layoutManager = LinearLayoutManager(context)
     }
 
-    fun setData() {
-        adapter = PostsAdapter(
-            listOf(
-                PostItemDataModel("0", "Title", null, "author", "25m"),
-                PostItemDataModel("1", "Title", null, "author", "15m")
-            )
-        )
+    fun setData(posts: List<PostItemDomainModel>) {
+        adapter = PostsAdapter(posts)
     }
 }

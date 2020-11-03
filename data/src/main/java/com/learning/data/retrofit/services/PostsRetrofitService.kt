@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface PostsRetrofitService {
 
     companion object {
-        fun create(): PostsRetrofitService = PostsServiceFactory.create()
+        fun create(): PostsRetrofitService = PostsServiceFactory.get()
     }
 
     @GET("api/v1/search_by_date")
