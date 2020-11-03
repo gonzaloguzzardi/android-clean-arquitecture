@@ -12,8 +12,8 @@ class GetPostsUseCase(private val postsRepository: PostsRepository) {
 
     suspend fun execute(): Result {
         return try {
-            Result.Success(postsRepository.getPosts().filter { !it.id.isNullOrBlank() }
-            )
+            val posts = postsRepository.getPosts().filter { !it.id.isNullOrBlank() }
+            Result.Success(posts)
         } catch (e: IOException) {
             Result.Error(e)
         }
