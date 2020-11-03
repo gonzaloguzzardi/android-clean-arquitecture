@@ -15,6 +15,7 @@ object PostsServiceFactory {
 
     private var postsService: PostsRetrofitService? = null
 
+    @Suppress("UnsafeCallOnNullableType")
     fun get(): PostsRetrofitService {
         if (postsService != null) return postsService!!
 
