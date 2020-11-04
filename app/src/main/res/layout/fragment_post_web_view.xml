@@ -23,11 +23,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawablePadding="@dimen/web_view_action_bar_title_start_padding"
+            android:drawableTint="@color/design_default_color_on_secondary"
             android:gravity="center_vertical"
             android:paddingStart="0dp"
             android:paddingEnd="@dimen/web_view_action_bar_title_end_padding"
             android:text="@string/webview_action_bar_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:drawableStartCompat="@drawable/abc_vector_test" />
     </androidx.appcompat.widget.Toolbar>
 
