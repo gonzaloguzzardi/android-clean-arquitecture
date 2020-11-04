@@ -50,9 +50,9 @@ Min API level is set to [`21`](https://android-arsenal.com/api?level=21)
 
 #### App layer (Presentation layer)
 
-This layer is closest to what the user sees on the screen. The `presentation` layer uses `MVVM` using `ViewModel` to preserve data on configuration changes)
+This layer is closest to what the user sees on the screen. The `app` layer uses `MVVM` using `ViewModel` to preserve data on configuration changes)
 
-Presentation layer depends on Domain and Data layers.
+App layer depends on Domain and Data layers.
 
 Components:
 - **Views (Fragment)** - presents data on the screen and pass user interactions to View Model
@@ -70,7 +70,9 @@ Components:
 
 #### Data layer
 
-Manages application data and exposes these data sources as repositories to the `domain` layer. Used to retrieve data from the internet uing retrofit and caching this data locally in a SQLite database using room.
+Manages application data and exposes these data sources as repositories to the `domain` layer. Used to retrieve data from the internet using retrofit and caching this data locally in a SQLite database using room.
+
+Data layer depends only on Domain, implementing interfaces domain layer exposes.
 
 Components:
 - **Repository** - Handles data and exposes it to the `domain` layer.
