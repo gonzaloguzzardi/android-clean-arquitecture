@@ -40,7 +40,10 @@ class PostsListFragment : Fragment() {
         postsViewModel.postsViewStateLiveData.observe(viewLifecycleOwner, stateObserver)
 
         setSwipeRefreshListener()
-        loadPosts()
+
+        if (!postsViewModel.hasPostsLoaded()) {
+            loadPosts()
+        }
 
         return binding!!.root
     }

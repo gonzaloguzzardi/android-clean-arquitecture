@@ -10,9 +10,10 @@ data class PostDataEntity(
     val title: String?,
     val storyTitle: String?,
     val author: String?,
-    val creationTime: String?
+    val creationTime: String?,
+    val storyUrl: String?
 ) {
 
     fun toDomainModel() =
-        PostItemDomainModel(id, title ?: storyTitle, author, creationTime)
+        PostItemDomainModel(id, title ?: storyTitle, author, creationTime, storyUrl)
 }
