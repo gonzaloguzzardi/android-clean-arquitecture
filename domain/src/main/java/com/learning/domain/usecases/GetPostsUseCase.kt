@@ -10,9 +10,9 @@ class GetPostsUseCase(private val postsRepository: PostsRepository) {
         data class Error(val e: Throwable) : Result()
     }
 
-    suspend fun execute(): Result {
+    suspend fun execute(isNetworkConnected: Boolean): Result {
         return try {
-            val posts = postsRepository.getPosts().filter { !it.id.isNullOrBlank() }
+            val posts = postsRepository.getPosts(isNetworkConnected).filter { !it.id.isNullOrBlank() }
             Result.Success(posts)
         } catch (e: IOException) {
             Result.Error(e)

@@ -1,5 +1,6 @@
 package com.learning.data.model
 
+import com.learning.data.room.PostDataEntity
 import com.learning.domain.model.PostItemDomainModel
 import com.squareup.moshi.Json
 
@@ -13,3 +14,6 @@ data class PostItemDataModel(
 
 fun PostItemDataModel.toDomainModel(): PostItemDomainModel =
     PostItemDomainModel(id, title ?: storyTitle, author, creationTime)
+
+fun PostItemDataModel.toEntity(): PostDataEntity =
+    PostDataEntity(id ?: "", title, storyTitle, author, creationTime)

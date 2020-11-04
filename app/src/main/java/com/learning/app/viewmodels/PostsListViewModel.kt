@@ -10,10 +10,12 @@ class PostsListViewModel(private val getPostsUseCase: GetPostsUseCase): ViewMode
 
     val postsViewStateLiveData = PostsLiveData()
 
-    fun loadPosts() {
+    fun isLoadingPosts() = postsViewStateLiveData.value?.isLoading ?: true
+
+    fun loadPosts(isNetworkConnected: Boolean) {
         postsViewStateLiveData.updateLoading()
         viewModelScope.launch {
-            getPostsUseCase.execute().also { result ->
+            getPostsUseCase.execute(isNetworkConnected).also { result ->
                 when (result) {
                     is GetPostsUseCase.Result.Success -> if (result.data.isEmpty()) {
                         postsViewStateLiveData.updateError()

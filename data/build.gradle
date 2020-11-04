@@ -39,6 +39,7 @@ dependencies {
     implementation project(':domain')
     implementation core.kotlinStdLib
     implementation core.coreKtx
+    implementation core.kotlinCoroutines
     implementation thirdParty.retrofit
     implementation thirdParty.moshiConverter
     implementation thirdParty.coroutineCallAdapter
