@@ -12,6 +12,7 @@ class PostsRepositoryImpl(
     private val postsDao: PostsDao
 ) : PostsRepository {
 
+    @Suppress("TooGenericExceptionCaught")
     override suspend fun getPosts(isNetworkConnected: Boolean): List<PostItemDomainModel> {
         return try {
             val posts = if (isNetworkConnected) {

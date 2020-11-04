@@ -7,7 +7,7 @@ import com.learning.data.repositories.PostsRepositoryImpl
 import com.learning.data.retrofit.services.PostsRetrofitService
 import com.learning.domain.usecases.GetPostsUseCase
 
-class PostsListViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
+class PostsListViewModelFactory : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T = PostsListViewModel(
         GetPostsUseCase(
             PostsRepositoryImpl(
