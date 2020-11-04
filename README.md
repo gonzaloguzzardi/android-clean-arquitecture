@@ -77,3 +77,15 @@ Components:
 - **Mapper** - maps `data model` to `domain model` (to keep `domain` layer independent from the `data` layer). Here mappers are implemented as functions in Model classes.
 - **RetrofitService** - defines a set of API endpoints.
 - **DataModel** - defines the structure of the data retrieved from the network or databases and contains annotations
+
+## Getting started
+To open this project follow any of the next steps:
+### Android Studio 4.1
+
+1. Android Studio -> File -> New -> From Version control -> Git
+2. Enter `https://github.com/gonzaloguzzardi/android-clean-arquitecture.git` into URL field
+
+### Command-line + Android Studio 4.1
+
+1. Run `git clone https://github.com/gonzaloguzzardi/android-clean-arquitecture.git`
+2. Android Studio -> File -> Open
