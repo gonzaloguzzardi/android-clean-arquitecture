@@ -2,4 +2,6 @@
     <dimen name="view_holder_post_vertical_margins">16dp</dimen>
     <dimen name="view_holder_post_horizontal_margins">12dp</dimen>
     <dimen name="view_holder_post_subtitle_margin_top">4dp</dimen>
+    <dimen name="web_view_action_bar_title_start_padding">8dp</dimen>
+    <dimen name="web_view_action_bar_title_end_padding">16dp</dimen>
 </resources>

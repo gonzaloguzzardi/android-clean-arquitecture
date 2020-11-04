@@ -9,9 +9,9 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.learning.app.databinding.FragmentPostWebViewBinding
-
 
 class PostWebViewFragment: Fragment() {
 
@@ -28,6 +28,7 @@ class PostWebViewFragment: Fragment() {
     ): View {
         val binding = FragmentPostWebViewBinding.inflate(inflater, container, false)
         setupWebView(binding.postWebView, binding.loadingProgressBar)
+        setupBackButton(binding.actionBarBackButton)
         return binding.root
     }
 
@@ -38,10 +39,13 @@ class PostWebViewFragment: Fragment() {
                 loadingProgressBar.visibility = GONE
                 super.onPageCommitVisible(view, url)
             }
-
-
         }
         webView.loadUrl(args.url)
+    }
 
+    private fun setupBackButton(view: View) {
+        view.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }
