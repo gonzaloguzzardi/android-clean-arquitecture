@@ -11,9 +11,11 @@ ext {
     roomVersion = '2.2.5'
     okHttp3Version = '4.9.0'
     coroutineCallAdapterVersion = '0.9.2'
+    coroutinesVersion = '1.4.0'
 
     core = [
             kotlinStdLib    : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            kotlinCoroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}",
             coreKtx         : "androidx.core:core-ktx:${coreKtxVersion}",
             appCompat       : "androidx.appcompat:appcompat:${appCompatVersion}",
             material        : "com.google.android.material:material:${materialVersion}",

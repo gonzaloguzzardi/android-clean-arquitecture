@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.learning.app.databinding.FragmentPostsListBinding
 import com.learning.app.livedata.PostsLiveData
+import com.learning.app.utils.network.NetworkState
 import com.learning.app.viewmodels.PostsListViewModel
 import com.learning.app.viewmodels.PostsListViewModelFactory
 import com.learning.domain.model.PostItemDomainModel
@@ -17,7 +18,7 @@ class PostsListFragment : Fragment() {
 
     private val postsViewModel: PostsListViewModel by viewModels { PostsListViewModelFactory() }
 
-    private lateinit var binding: FragmentPostsListBinding
+    private var binding: FragmentPostsListBinding? = null
 
     private val stateObserver = Observer<PostsLiveData.PostsViewState> { viewState ->
         if (viewState.isLoading) {
@@ -37,29 +38,50 @@ class PostsListFragment : Fragment() {
         binding = FragmentPostsListBinding.inflate(inflater, container, false)
 
         postsViewModel.postsViewStateLiveData.observe(viewLifecycleOwner, stateObserver)
-        postsViewModel.loadPosts()
 
-        binding.swipeRefreshLayout.setOnRefreshListener {
-            postsViewModel.loadPosts()
+        setSwipeRefreshListener()
+        loadPosts()
+
+        return binding!!.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
+    private fun loadPosts() {
+        postsViewModel.loadPosts(NetworkState.isNetworkConnected)
+    }
+
+    private fun setSwipeRefreshListener() {
+        binding?.let { binding->
+            binding.swipeRefreshLayout.setOnRefreshListener {
+                loadPosts()
+            }
         }
-
-        return binding.root
     }
 
     private fun showError() {
-        binding.swipeRefreshLayout.isRefreshing = false
+        binding?.let { binding->
+            binding.swipeRefreshLayout.isRefreshing = false
+        }
     }
 
     private fun showSuccess(posts: List<PostItemDomainModel>) {
-        binding.swipeRefreshLayout.isRefreshing = false
-        binding.recyclerViewPosts.setData(posts)
+        binding?.let { binding ->
+            binding.swipeRefreshLayout.isRefreshing = false
+            if (posts.isNotEmpty()) {
+                binding.recyclerViewPosts.setData(posts)
+            }
+        }
     }
 
     private fun showLoading() {
-        binding.swipeRefreshLayout.let { swipeRefreshLayout ->
-            if (!swipeRefreshLayout.isRefreshing) {
+        binding?.let { binding ->
+            binding.swipeRefreshLayout.let { swipeRefreshLayout ->
                 swipeRefreshLayout.post {
-                    swipeRefreshLayout.isRefreshing = true
+                    swipeRefreshLayout.isRefreshing = postsViewModel.isLoadingPosts()
                 }
             }
         }
