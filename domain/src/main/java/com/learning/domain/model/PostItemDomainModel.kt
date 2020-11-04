@@ -4,5 +4,6 @@ data class PostItemDomainModel(
     val id: String?,
     val title: String?,
     val author: String?,
-    val creationTime: String?
+    val creationTime: String?,
+    val storyUrl: String?
 )

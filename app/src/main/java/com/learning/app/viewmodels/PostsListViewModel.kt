@@ -10,6 +10,8 @@ class PostsListViewModel(private val getPostsUseCase: GetPostsUseCase): ViewMode
 
     val postsViewStateLiveData = PostsLiveData()
 
+    fun hasPostsLoaded(): Boolean = postsViewStateLiveData.value?.posts?.isNotEmpty() ?: false
+
     fun isLoadingPosts() = postsViewStateLiveData.value?.isLoading ?: true
 
     fun loadPosts(isNetworkConnected: Boolean) {
