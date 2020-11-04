@@ -48,7 +48,7 @@ Min API level is set to [`21`](https://android-arsenal.com/api?level=21)
   <img src="https://github.com/gonzaloguzzardi/android-clean-arquitecture/blob/main/assets/clean-arquitecture-image.png?raw=true" width="450" />
 </p>
 
-#### Presentation layer
+#### App layer (Presentation layer)
 
 This layer is closest to what the user sees on the screen. The `presentation` layer uses `MVVM` using `ViewModel` to preserve data on configuration changes)
 
