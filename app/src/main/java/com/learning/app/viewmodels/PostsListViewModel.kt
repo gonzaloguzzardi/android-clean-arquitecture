@@ -3,10 +3,14 @@ package com.learning.app.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.learning.app.livedata.PostsLiveData
+import com.learning.domain.usecases.DeletePostUseCase
 import com.learning.domain.usecases.GetPostsUseCase
 import kotlinx.coroutines.launch
 
-class PostsListViewModel(private val getPostsUseCase: GetPostsUseCase): ViewModel() {
+class PostsListViewModel(
+    private val getPostsUseCase: GetPostsUseCase,
+    private val deletePostUseCase: DeletePostUseCase
+) : ViewModel() {
 
     val postsViewStateLiveData = PostsLiveData()
 

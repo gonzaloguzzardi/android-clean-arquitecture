@@ -1,6 +1,6 @@
 package com.learning.data.model
 
-import com.learning.data.room.PostDataEntity
+import com.learning.data.room.posts.PostDataEntity
 import com.learning.domain.model.PostItemDomainModel
 import com.squareup.moshi.Json
 
