@@ -12,9 +12,10 @@ import com.learning.app.livedata.PostsLiveData
 import com.learning.app.utils.network.NetworkState
 import com.learning.app.viewmodels.PostsListViewModel
 import com.learning.app.viewmodels.PostsListViewModelFactory
+import com.learning.app.views.postslist.PostsRecyclerView
 import com.learning.domain.model.PostItemDomainModel
 
-class PostsListFragment : Fragment() {
+class PostsListFragment : Fragment(), PostsRecyclerView.OnItemRemovedListener {
 
     private val postsViewModel: PostsListViewModel by viewModels { PostsListViewModelFactory() }
 
@@ -53,6 +54,10 @@ class PostsListFragment : Fragment() {
         binding = null
     }
 
+    override fun onRemoved(postId: String) {
+        postsViewModel.deletePost(postId)
+    }
+
     private fun loadPosts() {
         postsViewModel.loadPosts(NetworkState.isNetworkConnected)
     }
@@ -75,7 +80,7 @@ class PostsListFragment : Fragment() {
         binding?.let { binding ->
             binding.swipeRefreshLayout.isRefreshing = false
             if (posts.isNotEmpty()) {
-                binding.recyclerViewPosts.setData(posts)
+                binding.recyclerViewPosts.setData(posts, this)
             }
         }
     }

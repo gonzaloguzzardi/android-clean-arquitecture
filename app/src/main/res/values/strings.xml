@@ -3,4 +3,5 @@
     <string name="label_yesterday">Yesterday</string>
     <string name="webview_action_bar_title">Back</string>
     <string name="webview_action_bar_arrow_content_description">Back arrow</string>
+    <string name="post_view_holder_delete">Delete</string>
 </resources>

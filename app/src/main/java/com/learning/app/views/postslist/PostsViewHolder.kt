@@ -2,6 +2,7 @@ package com.learning.app.views.postslist
 
 import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
@@ -28,6 +29,12 @@ class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHold
             return PostsViewHolder(binding)
         }
     }
+
+    val foregroundView: View
+        get() = binding.foregroundView
+
+    val backgroundView: View
+        get() = binding.backgroundView
 
     fun bind(postItemModel: PostItemDomainModel) {
         binding.postTitle.setTextOrHide(postItemModel.title)

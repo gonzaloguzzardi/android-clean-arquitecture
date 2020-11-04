@@ -34,4 +34,10 @@ class PostsListViewModel(
             }
         }
     }
+
+    fun deletePost(postId: String) {
+        viewModelScope.launch {
+            deletePostUseCase.execute(postId)
+        }
+    }
 }
