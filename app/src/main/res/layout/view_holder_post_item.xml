@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:selectableItemBackground"
     android:clickable="true"
     android:focusable="true">
 
@@ -33,7 +32,7 @@
         android:id="@+id/foreground_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@drawable/ripple_post_view_holder"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/view_holder_post_horizontal_margins"
         android:paddingVertical="@dimen/view_holder_post_vertical_margins">
