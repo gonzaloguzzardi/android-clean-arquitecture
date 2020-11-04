@@ -1,31 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:selectableItemBackground"
     android:clickable="true"
-    android:focusable="true"
-    android:orientation="vertical"
-    android:paddingStart="@dimen/view_holder_post_horizontal_margins"
-    android:paddingTop="@dimen/view_holder_post_vertical_margins"
-    android:paddingEnd="@dimen/view_holder_post_horizontal_margins"
-    android:paddingBottom="@dimen/view_holder_post_vertical_margins">
+    android:focusable="true">
 
-    <TextView
-        android:id="@+id/post_title"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/background_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|end"
+        android:background="@android:color/holo_red_light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="@dimen/view_holder_delete_text_view_margin_end"
+            android:gravity="center_vertical"
+            android:text="@string/post_view_holder_delete"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            app:drawableRightCompat="@android:drawable/ic_menu_delete" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/foreground_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
-        tools:text="How to automatically create images for responsive design" />
+        android:background="@drawable/ripple_post_view_holder"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/view_holder_post_horizontal_margins"
+        android:paddingVertical="@dimen/view_holder_post_vertical_margins">
 
-    <TextView
-        android:id="@+id/post_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/view_holder_post_subtitle_margin_top"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        tools:text="Danno - 25m" />
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            tools:text="How to automatically create images for responsive design" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/post_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_holder_post_subtitle_margin_top"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            tools:text="Danno - 25m" />
+    </LinearLayout>
+</FrameLayout>

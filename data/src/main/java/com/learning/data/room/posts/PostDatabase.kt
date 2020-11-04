@@ -1,4 +1,4 @@
-package com.learning.data.room
+package com.learning.data.room.posts
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
