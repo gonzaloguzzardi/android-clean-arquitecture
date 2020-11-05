@@ -10,7 +10,7 @@ Simple proyect to showcase clean arquitecture and and modern android development
 [![CircleCI](https://circleci.com/gh/gonzaloguzzardi/android-clean-arquitecture/tree/main.svg?style=shield)](https://circleci.com/gh/gonzaloguzzardi/android-clean-arquitecture/main/teesloane-patch-5)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 
-Require Android Studio 4.+
+Require Android Studio 4.1
 
 ## Project characteristics
 * 100% [Kotlin](https://kotlinlang.org/)
