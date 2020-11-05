@@ -2,11 +2,11 @@
 Simple proyect to showcase clean arquitecture and and modern android development skills.
 
 
-[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 [![Kotlin Version](https://img.shields.io/badge/Kotlin-1.4.1-blue.svg)](https://kotlinlang.org)
 [![AGP](https://img.shields.io/badge/AGP-4.1.0-blue?style=flat)](https://developer.android.com/studio/releases/gradle-plugin)
 [![Gradle](https://img.shields.io/badge/Gradle-6.5.0-blue?style=flat)](https://gradle.org)
 
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 [![CircleCI](https://circleci.com/gh/gonzaloguzzardi/android-clean-arquitecture/tree/main.svg?style=shield)](https://circleci.com/gh/gonzaloguzzardi/android-clean-arquitecture/main/teesloane-patch-5)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 
