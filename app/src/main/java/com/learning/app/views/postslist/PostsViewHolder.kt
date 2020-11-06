@@ -33,9 +33,6 @@ class PostsViewHolder(private val binding: ViewHolderPostItemBinding) : ViewHold
     val foregroundView: View
         get() = binding.foregroundView
 
-    val backgroundView: View
-        get() = binding.backgroundView
-
     fun bind(postItemModel: PostItemDomainModel) {
         binding.postTitle.setTextOrHide(postItemModel.title)
         bindSubtitle(postItemModel)
