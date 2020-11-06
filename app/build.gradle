@@ -63,6 +63,8 @@ dependencies {
     implementation jetpack.roomRuntime
     implementation jetpack.roomKtx
 
+    debugImplementation  thirdParty.leakCanary
+
     testImplementation test.jUnit
     androidTestImplementation androidTest.jUnit
     androidTestImplementation androidTest.espresso
