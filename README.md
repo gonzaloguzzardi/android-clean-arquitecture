@@ -18,6 +18,7 @@ Require Android Studio 4.1
 * [Android Jetpack](https://developer.android.com/jetpack)
 * Single-activity architecture ([Navigation component](https://developer.android.com/guide/navigation/navigation-getting-started))
 * Reactive UI
+* [View Binding](https://developer.android.com/topic/libraries/view-binding)
 * Testing (Unit, UI) --> PENDING
 * Static analysis tools
 * Material design
